@@ -52,9 +52,10 @@ sleep 3
 
 echo "Bucket create"
 bash /opt/couchbase/bin/couchbase-cli bucket-create -c 127.0.0.1:${REST_PORT} --username ${USERNAME} --password ${PASSWORD} \
---bucket ${BUCKET_NAME} --bucket-type ${BUCKET_TYPE} --bucket-ramsize ${BUCKET_RAMSIZE} --enable-flush 1 --bucket-replica 0
+--bucket ${BUCKET_NAME} --bucket-type ${BUCKET_TYPE} --bucket-ramsize ${BUCKET_RAMSIZE} --enable-flush 1 --bucket-replica 0 --wait
 
-sleep 30
+sleep 3
+
 # Attach to couchbase entrypoint
 echo "Attaching to couchbase-server entrypoint"
 echo "couchbase-dev started"
